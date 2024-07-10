@@ -1,0 +1,27 @@
+---
+const PROJECTS = [
+    {
+        title: 'Project',
+        description: 'Lorem ipsum',
+        link: 'https://jaimehu20.github.io/oxygen-shop/',
+        github: 'https://github.com/jaimehu20/oxygen-shop',
+        image: '/projects/oxygenShop.webp',
+        tags: ['HTML',  'CSS', 'Javascript']
+    }
+]
+---
+
+{
+    PROJECTS.map(({image, title, description, tags}) => (
+        <article>
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <ul>
+                {tags.map(tag => (
+                    <li>{tag}</li>
+                ))}
+            </ul>
+            <img src={image} alt={`Captura de pantalla del proyecto ${image}`}/>
+        </article>
+    ))
+}
