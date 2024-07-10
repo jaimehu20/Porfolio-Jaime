@@ -1,27 +1,175 @@
 ---
+import GitHub from "./icons/GitHub.astro"
+import HTML from "./icons/HTML.astro"
+import CSS from "./icons/CSS.astro"
+import Javascript from "./icons/Javascript.astro"
+import React from "./icons/React.astro"
+import ReactRedux from "./icons/ReactRedux.astro"
+import SASS from "./icons/SASS.astro"
+import Typescript from "./icons/Typescript.astro"
+import NodeJS from "./icons/NodeJS.astro"
+import ExpressJS from "./icons/ExpressJS.astro"
+import MongoDB from "./icons/MongoDB.astro"
+import JWT from "./icons/JWT.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+
+const TAGS = {
+  HTML: {
+    name: "HTML",
+    class: "bg-black text-white",
+    icon: HTML,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#003159] text-white",
+    icon: CSS,
+  },
+  Javascript: {
+        name: 'Javascript',
+        class: 'bg-black text-white',
+        icon: Javascript
+    },
+  React: {
+    name: 'React',
+    class: 'bg-black text-white',
+    icon: React
+  },
+  ReactRedux: {
+    name: 'Redux',
+    class: 'bg-black text-white',
+    icon: ReactRedux
+  },
+  SASS: {
+    name: 'Sass',
+    class: 'bg-black text-white',
+    icon: SASS
+  },
+  Typescript: {
+    name: 'Typescript',
+    class: 'bg-black text-white',
+    icon: Typescript
+  },
+  NodeJS: {
+    name: 'NodeJS',
+    class: 'bg-black text-white',
+    icon: NodeJS
+  },
+  ExpressJS: {
+    name: 'ExpressJS',
+    class: 'bg-black text-white',
+    icon: ExpressJS
+  },
+  MongoDB: {
+    name: 'MongoDB',
+    class: 'bg-black text-white',
+    icon: MongoDB
+  },
+  JWT: {
+    name: 'JWT',
+    class: 'bg-black text-white',
+    icon: JWT
+  }
+}
 const PROJECTS = [
-    {
-        title: 'Project',
-        description: 'Lorem ipsum',
-        link: 'https://jaimehu20.github.io/oxygen-shop/',
-        github: 'https://github.com/jaimehu20/oxygen-shop',
-        image: '/projects/oxygenShop.webp',
-        tags: ['HTML',  'CSS', 'Javascript']
-    }
+  {
+    title: "Oxygen Shop",
+    description:
+      "Oxygen Shop es una aplicación enfocada a simular una web e-store de servicios.",
+    link: "https://jaimehu20.github.io/oxygen-shop/",
+    github: "https://github.com/jaimehu20/oxygen-shop",
+    image: "/projects/oxygenshop.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.Javascript],
+  },
+  {
+    title: "Image Finder",
+    description:
+      "Image Finder es una plataforma de búsqueda de imágenes gratuitas y en alta definición utilizando la API de Unsplash.",
+    link: "http://image-finder-website.s3-website.eu-west-3.amazonaws.com/",
+    github: "https://github.com/jaimehu20/Image-Finder",
+    image: "/projects/imagefinder.webp",
+    tags: [TAGS.React, TAGS.ReactRedux, TAGS.CSS, TAGS.Javascript],
+  },
+  {
+    title: "Hotel Miranda",
+    description:
+      "Hotel Miranda es una web que ofrece al usuario una experiencia fluida para explorar, reservar habitaciones y solicitar información sobre el hotel.",
+    link: "https://jaimehu20.github.io/Hotel-Miranda/",
+    github: "https://github.com/jaimehu20/Hotel-Miranda",
+    image: "/projects/hotelmiranda.webp",
+    tags: [TAGS.HTML,TAGS.SASS, TAGS.CSS,],
+  },
+  {
+    title: "Miranda Dashboard",
+    description:
+      "Miranda Dashboard es una aplicación web para la gestión de los clientes, reservas, reseñas y empleados del Hotel Miranda.",
+    link: "http://hotelmiranda-dashboard-website.s3-website.eu-west-3.amazonaws.com/",
+    github: "https://github.com/jaimehu20/Hotel-Miranda-Dashboard",
+    image: "/projects/dashboard.webp",
+    tags: [TAGS.React, TAGS.ReactRedux, TAGS.CSS, TAGS.Typescript],
+  },
+  {
+    title: "Miranda API",
+    description:
+      "API RESTful para el Hotel Miranda que, utilizando JWT, gestiona la autenticación del usuario/empleado y permite realizar operaciones CRUD sobre los datos de usuarios, empleados, reservas y habitaciones del hotel.",
+    link: "https://boajmtxotj.execute-api.eu-west-3.amazonaws.com/dev/",
+    github: "https://github.com/jaimehu20/Miranda-API",
+    image: "/projects/api.webp",
+    tags: [TAGS.NodeJS, TAGS.ExpressJS, TAGS.MongoDB],
+  },
 ]
 ---
 
-{
-    PROJECTS.map(({image, title, description, tags}) => (
-        <article>
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <ul>
-                {tags.map(tag => (
-                    <li>{tag}</li>
-                ))}
-            </ul>
-            <img src={image} alt={`Captura de pantalla del proyecto ${image}`}/>
-        </article>
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code
+              
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
     ))
-}
+  }
+</div>
+
+
+
