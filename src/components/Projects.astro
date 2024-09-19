@@ -13,6 +13,7 @@ import MongoDB from "./icons/MongoDB.astro"
 import JWT from "./icons/JWT.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import Tailwind from "./icons/Tailwind.astro"
 
 const TAGS = {
   HTML: {
@@ -25,11 +26,16 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: CSS,
   },
+  Tailwind: {
+    name: 'TAILWIND',
+    class: 'bg-black text-white',
+    icon: Tailwind
+  },
   Javascript: {
-        name: 'Javascript',
-        class: 'bg-black text-white',
-        icon: Javascript
-    },
+      name: 'Javascript',
+      class: 'bg-black text-white',
+      icon: Javascript
+  },
   React: {
     name: 'React',
     class: 'bg-black text-white',
@@ -116,6 +122,15 @@ const PROJECTS = [
     github: "https://github.com/jaimehu20/Miranda-API",
     image: "/projects/api.webp",
     tags: [TAGS.NodeJS, TAGS.ExpressJS, TAGS.MongoDB],
+  },
+  {
+    title: "Weatherly",
+    description:
+      "Weatherly es una aplicación que te permite consultar el tiempo actual y las previsiones meteorológicas en cualquier lugar del mundo.",
+    link: "https://main--weatherly-forecastweb.netlify.app/",
+    github: "https://github.com/jaimehu20/Weatherly",
+    image: "/projects/weatherly.webp",
+    tags: [TAGS.React, TAGS.ReactRedux, TAGS.Tailwind, TAGS.Typescript],
   },
 ]
 ---
